@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квест: Звёздные Войны — Путь Джедая</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .question-container {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question-container h3 {
+            margin-bottom: 20px;
+        }
+        .answer-btn {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .answer-btn:hover {
+            background-color: #45a049;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Добро пожаловать в квест: Звёздные Войны — Путь Джедая!</h1>
+    
+    <div id="question-1" class="question-container">
+        <h3>Загадка 1: Кто починил гипердвигатель «Тысячелетнего сокола»?</h3>
+        <button class="answer-btn" onclick="checkAnswer(1, 'C-3PO')">C-3PO</button>
+        <button class="answer-btn" onclick="checkAnswer(1, 'R2-D2')">R2-D2</button>
+        <button class="answer-btn" onclick="checkAnswer(1, 'Люк Скайуокер')">Люк Скайуокер</button>
+    </div>
+
+    <div id="question-2" class="question-container" style="display: none;">
+        <h3>Загадка 2: Какой космической расы был Йода?</h3>
+        <button class="answer-btn" onclick="checkAnswer(2, 'Йодан')">Йодан</button>
+        <button class="answer-btn" onclick="checkAnswer(2, 'Неизвестно')">Неизвестно</button>
+        <button class="answer-btn" onclick="checkAnswer(2, 'Ситх')">Ситх</button>
+    </div>
+
+    <div id="question-3" class="question-container" style="display: none;">
+        <h3>Загадка 3: По словам Императора, в чем была слабость Люка?</h3>
+        <button class="answer-btn" onclick="checkAnswer(3, 'Он не был готов к поединку')">Он не был готов к поединку</button>
+        <button class="answer-btn" onclick="checkAnswer(3, 'В его вере в своих друзей')">В его вере в своих друзей</button>
+        <button class="answer-btn" onclick="checkAnswer(3, 'Он был слишком молод')">Он был слишком молод</button>
+    </div>
+
+    <div id="question-4" class="question-container" style="display: none;">
+        <h3>Загадка 4: Что эвоки думали о C-3PO?</h3>
+        <button class="answer-btn" onclick="checkAnswer(4, 'Он их враг')">Он их враг</button>
+        <button class="answer-btn" onclick="checkAnswer(4, 'Он Божество')">Он Божество</button>
+        <button class="answer-btn" onclick="checkAnswer(4, 'Он их король')">Он их король</button>
+    </div>
+
+    <div id="question-5" class="question-container" style="display: none;">
+        <h3>Загадка 5: По словам Йоды, что Люку нужно было сделать, чтобы завершить обучение и стать мастером-джедаем?</h3>
+        <button class="answer-btn" onclick="checkAnswer(5, 'Сразиться с Дартом Вейдером снова')">Сразиться с Дартом Вейдером снова</button>
+        <button class="answer-btn" onclick="checkAnswer(5, 'Пройти через испытание на Дагобе')">Пройти через испытание на Дагобе</button>
+        <button class="answer-btn" onclick="checkAnswer(5, 'Победить Императора')">Победить Императора</button>
+    </div>
+
+    <div id="question-6" class="question-container" style="display: none;">
+        <h3>Загадка 6: По словам Йоды, что является путем на темную сторону?</h3>
+        <button class="answer-btn" onclick="checkAnswer(6, 'Зависть')">Зависть</button>
+        <button class="answer-btn" onclick="checkAnswer(6, 'Страх')">Страх</button>
+        <button class="answer-btn" onclick="checkAnswer(6, 'Гнев')">Гнев</button>
+    </div>
+
+    <div id="question-7" class="question-container" style="display: none;">
+        <h3>Загадка 7: Сколько лет было Падме, когда ее избрали королевой Набу?</h3>
+        <button class="answer-btn" onclick="checkAnswer(7, '14')">14</button>
+        <button class="answer-btn" onclick="checkAnswer(7, '16')">16</button>
+        <button class="answer-btn" onclick="checkAnswer(7, '18')">18</button>
+    </div>
+
+    <div id="question-8" class="question-container" style="display: none;">
+        <h3>Загадка 8: Чей световой меч Люк получил от Оби-Вана?</h3>
+        <button class="answer-btn" onclick="checkAnswer(8, 'Энакин Скайуокер')">Энакин Скайуокер</button>
+        <button class="answer-btn" onclick="checkAnswer(8, 'Оби-Ван Кеноби')">Оби-Ван Кеноби</button>
+        <button class="answer-btn" onclick="checkAnswer(8, 'Мейса Винду')">Мейса Винду</button>
+    </div>
+
+    <div id="question-9" class="question-container" style="display: none;">
+        <h3>Загадка 9: Сколько шпилей на Храме джедаев?</h3>
+        <button class="answer-btn" onclick="checkAnswer(9, '5')">5</button>
+        <button class="answer-btn" onclick="checkAnswer(9, '4')">4</button>
+        <button class="answer-btn" onclick="checkAnswer(9, '6')">6</button>
+    </div>
+
+    <div id="question-10" class="question-container" style="display: none;">
+        <h3>Загадка 10: Какое странное существо Люк нашел на Дагоба?</h3>
+        <button class="answer-btn" onclick="checkAnswer(10, 'Йода')">Йода</button>
+        <button class="answer-btn" onclick="checkAnswer(10, 'Вук')">Вук</button>
+        <button class="answer-btn" onclick="checkAnswer(10, 'Таунтаун')">Таунтаун</button>
+    </div>
+
+    <div id="result" style="display: none; text-align: center; margin-top: 30px;">
+        <h2>Поздравляем, вы завершили квест!</h2>
+        <a href="https://hellovvoman.github.io/kotodarians.net-save-galaxy/" class="answer-btn">Перейти на главный сайт</a>
+    </div>
+
+    <script>
+        // Массив правильных ответов
+        const correctAnswers = {
+            1: 'R2-D2',
+            2: 'Неизвестно',
+            3: 'В его вере в своих друзей',
+            4: 'Он Божество',
+            5: 'Сразиться с Дартом Вейдером снова',
+            6: 'Страх',
+            7: '14',
+            8: 'Энакин Скайуокер',
+            9: '5',
+            10: 'Йода'
+        };
+
+        function checkAnswer(questionNumber, userAnswer) {
+            if (userAnswer === correctAnswers[questionNumber]) {
+                alert('
